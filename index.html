@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+<title>Weather App | by Abbas</title>
+<meta name="title" content="Weather App | by Abbas">
+<meta name="description" content="Check real-time weather updates with this responsive Weather App built by Abbas. Get temperature, wind speed, humidity, and more for any city.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Weather App | by Abbas">
+<meta property="og:description" content="Get instant and accurate weather updates worldwide. Built with HTML, CSS, and JavaScript.">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="Weather App">
+<!-- <meta property="twitter:url" content=""> -->
+<meta property="twitter:title" content="Weather App | by Abbas">
+<meta property="twitter:description" content="Live weather forecast app built by Abbas. Easy to use, fast and beautiful.">
+<!-- <meta property="twitter:image" content="https://your-weather-app-link.com/images/weather-preview.png"> -->
+
+<!-- SEO Enhancers -->
+<meta name="robots" content="index, follow">
+<meta name="author" content="Muhammad Abbas">
+<meta name="keywords" content="weather app, weather forecast, HTML CSS JS weather, JavaScript weather app, openweathermap api, Abbas developer, responsive weather app">
+
+<!-- Favicon (optional) -->
+<link rel="icon" href="images/snow.png" type="image/png">
+
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">ABBAS</div>
+        <ul class="nav-links" id="navLinks">
+            <li class="nav-item"><a href="#main">Home</a></li>
+            <li class="nav-item"><a href="https://github.com/Abbas-Devloper">Github</a></li>
+            <li class="nav-item"><a href="https://my-portfolio-dun-five-37.vercel.app/">Portfolio</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <section id="main">
+        <div class="container">
+            <div class="search-box">
+                <i class="bx bxs-map"></i>
+                <input type="text" placeholder="Enter your Location">
+                <button type="button" class='bx bx-search' aria-label="Search"></button>
+            </div>
+            <p class="city-hide">City hide</p>
+
+            <div class="weather-box">
+                <div class="box">
+                    <div class="info-weather">
+                        <div class="weather">
+                            <img src="images/cloud.png" alt="Weather Icon">
+                            <p class="temperature">0 <span>°C</span></p>
+                            <p class="description">Broken Clouds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="humidity">
+                    <i class="bx bx-water"></i>
+                    <div class="text">
+                        <div class="info-humidity">
+                            <span>0%</span>
+                        </div>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+
+                <div class="wind">
+                    <i class="bx bx-wind"></i>
+                    <div class="text">
+                        <div class="info-wind">
+                            <span>0Km/h</span>
+                        </div>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="not-found">
+                <div class="box">
+                    <img src="images/404.png" alt="Location Not Found">
+                    <p>Oops! Location not Found!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('nav') && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        document.querySelector('.nav-links').addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>
